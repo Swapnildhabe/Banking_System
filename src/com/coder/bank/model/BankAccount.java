@@ -14,6 +14,13 @@ public class BankAccount {
 		this.emailId = emailId;
 		this.gender = gender;
 	}
+	
+
+	public BankAccount() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public String getName() {
 		return name;

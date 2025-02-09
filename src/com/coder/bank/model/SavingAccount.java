@@ -6,26 +6,20 @@ public class SavingAccount extends BankAccount {
 	
 	private double initialBalance=1000;
 	
-	private double totalBalacne;
+	private double totalBalance;
+
+//	private BankAccount bankAccount;
+	
+	
+	
 
 	
-	
-	public SavingAccount(String name, String emailId, String gender) {
-		super(name, emailId, gender);
+	public SavingAccount() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	
-
-	public SavingAccount(String name, String emailId, String gender, String savingAccountNumber, double initialBalance,
-			double totalBalacne) {
-		super(name, emailId, gender);
-		this.savingAccountNumber = savingAccountNumber;
-		this.initialBalance = initialBalance;
-		this.totalBalacne = totalBalacne;
-	}
-
-
 
 	public String getSavingAccountNumber() {
 		return savingAccountNumber;
@@ -43,19 +37,31 @@ public class SavingAccount extends BankAccount {
 		this.initialBalance = initialBalance;
 	}
 
-	public double getTotalBalacne() {
-		return totalBalacne;
+	public double getTotalBalance() {
+		return totalBalance;
 	}
 
-	public void setTotalBalacne(double totalBalacne) {
-		this.totalBalacne = totalBalacne;
+	public void setTotalBalance(double totalBalacne) {
+		this.totalBalance = totalBalacne;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "SavingAccount [savingAccountNumber=" + savingAccountNumber + ", initialBalance=" + initialBalance
-				+ ", totalBalacne=" + totalBalacne + "]";
+				+ ", totalBalacne=" + totalBalance + super.toString() + "]";
 	}
+	
+	
+
+	
+
+//	@Override
+//	public String toString() {
+//		return "SavingAccount [savingAccountNumber=" + savingAccountNumber + ", initialBalance=" + initialBalance
+//				+ ", totalBalacne=" + totalBalacne + "]";
+//	}
 	
 	
 }

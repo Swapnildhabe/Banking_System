@@ -9,18 +9,9 @@ public class CurrentAccount extends BankAccount {
 		
 		private double totalBalance;
 
-		public CurrentAccount(String name, String emailId, String gender) {
-			super(name, emailId, gender);
-			// TODO Auto-generated constructor stub
-		}
-
-		public CurrentAccount(String name, String emailId, String gender, String currentAccountNumber, double overDraft,
-				double totalBalance) {
-			super(name, emailId, gender);
-			this.currentAccountNumber = currentAccountNumber;
-			this.overDraft = overDraft;
-			this.totalBalance = totalBalance;
-		}
+	
+		
+		
 
 		public String getCurrentAccountNumber() {
 			return currentAccountNumber;
@@ -49,8 +40,10 @@ public class CurrentAccount extends BankAccount {
 		@Override
 		public String toString() {
 			return "CurrentAccount [currentAccountNumber=" + currentAccountNumber + ", overDraft=" + overDraft
-					+ ", totalBalance=" + totalBalance + "]";
+					+ ", totalBalance=" + totalBalance + ", toString()=" + super.toString() + "]";
 		}
+
+		
 		
 		
 		
