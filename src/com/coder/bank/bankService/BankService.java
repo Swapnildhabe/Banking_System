@@ -2,6 +2,7 @@ package com.coder.bank.bankService;
 
 import java.util.Scanner;
 
+import com.coder.bank.model.CurrentAccount;
 import com.coder.bank.model.SavingAccount;
 
 public class BankService extends AccountService {
@@ -37,23 +38,34 @@ public class BankService extends AccountService {
 		}
 		case 2: {
 			
-			openCurrentAccount();
+			CurrentAccount[] openCurrentAccount = openCurrentAccount();
+			break;
 		}
 		case 3: {
 			
 			openLoanAccount();
 		}
 		case 4: {
-			
-			checkBalance();
+			System.out.println("\u001B[34m"+"Enter Your Account Number For Saving 'sav' and '111' uniq number For Current 'cur' and '111' uniq number Follows"+ "\u001B[0m");
+				String accountNumber = sc.next();
+			checkBalance(accountNumber);
+			break;
 		}
 		case 5: {
-			
-			
+			System.out.println("\u001B[34m"+"Enter Your Account Number For Saving 'sav' and '111' uniq number For Current 'cur' and '111' uniq number Follows"+ "\u001B[0m");
+			String accountNumber = sc.next();
+			System.out.println("Enter The Amount You Want To Deposit In Your Account :-");
+			double value = sc.nextDouble();
+			depositAmount(accountNumber, value);
+			break;
 		}
 		case 6: {
-	
-	
+			System.out.println("\u001B[34m"+"Enter Your Account Number For Saving 'sav' and '111' uniq number For Current 'cur' and '111' uniq number Follows"+ "\u001B[0m");
+			String accountNumber = sc.next();
+			System.out.println("Enter The Amount You Want To Withdrawal From Your Account :-");
+			double value = sc.nextDouble();
+			
+				withdrawalValue(accountNumber,value);
 		}
 		case 7: {
 			System.out.println("Thank you for banking with us! We look forward to welcoming you again.");
