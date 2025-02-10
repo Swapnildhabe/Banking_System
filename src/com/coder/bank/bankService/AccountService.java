@@ -156,28 +156,30 @@ public class AccountService {
             		listSavingAccount[i].setTotalBalance(listSavingAccount[i].getTotalBalance()-value);
             		
             		System.out.println("\tSaving Account Number: " + "\u001B[31m"+ listSavingAccount[i].getSavingAccountNumber()+"\u001B[0m");
-            		System.out.println("\u001B[90m"+"Last Balance Your Account: "+lastBalance +"\u001B[0m");
-            		System.out.println("Withdrawal value is: "+value);
+            		System.out.println("\t\u001B[90m"+"Last Balance Your Account: "+lastBalance +"\u001B[0m");
+            		System.out.println("\tWithdrawal value is: "+value);
             		System.out.println("\t\u001B[32m"+"Total Balance is: "+listSavingAccount[i].getTotalBalance()+"\u001B[0m");
-            	}
+            	}return;
             }
 		}
 		for (int i = 0; i < currentAccountIndex; i++) {
             if (listCurrentAccount[i] != null && 
             		listCurrentAccount[i].getCurrentAccountNumber().equals(accountNumber)) {
             	double lastBalance = listCurrentAccount[i].getTotalBalance();
-            	System.out.println("You Have Facility of Overdraft Up Rs 500/-");
-            	if(lastBalance - value >= 500) {
+            	System.out.println("\t\u001B[32mYou Have Facility of Overdraft Up Rs 500/-\u001B[0m");
+            	if(lastBalance - value >= -500) {
             		listCurrentAccount[i].setTotalBalance(lastBalance - value);
-            		System.out.println("\u001B[32mWithdrawal successful!\u001B[0m");
+            		System.out.println("\t\u001B[32mWithdrawal successful!\u001B[0m");
             		System.out.println("\tCurrent Account Number: " + "\u001B[31m"+ listCurrentAccount[i].getCurrentAccountNumber()+"\u001B[0m");
-            		System.out.println("\u001B[90m"+"Last Balance Your Account: "+lastBalance +"\u001B[0m");
-            		System.out.println("Withdrawal value is: "+value);
-            		System.out.println("\u001B[32m"+"Total Balance is: "+listCurrentAccount[i].getTotalBalance()+"\u001B[0m");
+            		System.out.println("\t\u001B[90m"+"Last Balance Your Account: "+lastBalance +"\u001B[0m");
+            		System.out.println("\tWithdrawal value is: "+value);
+            		System.out.println("\t\u001B[32m"+"Total Balance is: "+listCurrentAccount[i].getTotalBalance()+"\u001B[0m");
+            		return;
             	}} else {
                     System.err.println("Overdraft limit exceeded! Maximum overdraft allowed is Rs 500.");
+                    return;
                 }
-                return;
+           
             	
             }
 			System.err.println("No current account found with Account Number: " + accountNumber);

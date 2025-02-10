@@ -66,6 +66,7 @@ public class BankService extends AccountService {
 			double value = sc.nextDouble();
 			
 				withdrawalValue(accountNumber,value);
+				break;
 		}
 		case 7: {
 			System.out.println("Thank you for banking with us! We look forward to welcoming you again.");
